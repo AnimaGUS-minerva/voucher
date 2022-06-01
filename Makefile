@@ -9,12 +9,13 @@ TARGET ?= test
 ci:
 	TARGET=ci make test
 
-init-rust-i686-nightly:
-	rustup toolchain install nightly-i686-unknown-linux-gnu
-	rustup target add i686-unknown-linux-gnu
-init-rust-x86_64-nightly:
+init-rust-toolchains:
 	rustup toolchain install nightly-x86_64-unknown-linux-gnu
+	rustup toolchain install nightly-i686-unknown-linux-gnu
 	rustup target add x86_64-unknown-linux-gnu
+	rustup target add i686-unknown-linux-gnu --toolchain nightly
+	rustup default nightly
+	rustup show
 
 doc:
 	cargo doc --no-deps
