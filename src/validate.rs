@@ -1,7 +1,7 @@
 use crate::{Voucher, Validate, VoucherError, SignatureAlgorithm};
 use crate::debug_println;
 use super::utils::minerva_mbedtls_utils::*;
-use minerva_mbedtls::psa_ifce::*;
+use minerva_mbedtls::{psa_ifce::*, mbedtls_error};
 
 impl Validate for Voucher {
     /// Validates the voucher using a PEM-encoded certificate.

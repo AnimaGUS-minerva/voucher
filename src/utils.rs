@@ -3,7 +3,7 @@ use crate::{Vec, SignatureAlgorithm};
 #[cfg(any(feature = "mbedtls-backend", feature = "sign", feature = "validate"))]
 pub mod minerva_mbedtls_utils {
     use super::*;
-    use minerva_mbedtls::{psa_crypto, psa_ifce::*};
+    use minerva_mbedtls::{psa_crypto, psa_ifce::*, mbedtls_error};
 
     /// Initializes the [PSA cryptography API](https://armmbed.github.io/mbed-crypto/html/)
     /// context.  Call this function when using the `Sign`/`Validate` trait backed by mbedtls.
