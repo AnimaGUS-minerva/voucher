@@ -1,18 +1,12 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="This crate implements a compact CBOR-encoded voucher defined by Constrained BRSKI."><meta name="keywords" content="rust, rustlang, rust-lang, minerva_voucher"><title>minerva_voucher - Rust</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" type="text/css" href="../normalize.css"><link rel="stylesheet" type="text/css" href="../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../ayu.css" disabled><link rel="stylesheet" type="text/css" href="../dark.css" disabled><link rel="stylesheet" type="text/css" href="../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../storage.js"></script><script src="../crates.js"></script><script defer src="../main.js"></script>
-    <noscript><link rel="stylesheet" href="../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../favicon.svg"></head><body class="rustdoc mod crate"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle">&#9776;</button><a class="sidebar-logo" href="../minerva_voucher/index.html"><div class="logo-container"><img class="rust-logo" src="../rust-logo.svg" alt="logo"></div>
-        </a><h2 class="location"></h2>
-    </nav>
-    <nav class="sidebar"><a class="sidebar-logo" href="../minerva_voucher/index.html"><div class="logo-container"><img class="rust-logo" src="../rust-logo.svg" alt="logo"></div>
-        </a><h2 class="location"><a href="#">Crate minerva_voucher</a></h2><div class="sidebar-elems"><div class="block"><ul><li class="version">Version 0.6.1</li><li><a id="all-types" href="all.html">All Items</a></li></div></ul><div class="block items"><ul><li><a href="#modules">Modules</a></li><li><a href="#macros">Macros</a></li><li><a href="#structs">Structs</a></li><li><a href="#enums">Enums</a></li><li><a href="#traits">Traits</a></li><li><a href="#functions">Functions</a></li></ul></div><div id="sidebar-vars" data-name="minerva_voucher" data-ty="mod" data-relpath=""></div><script defer src="sidebar-items.js"></script></div></nav><main><div class="width-limiter"><div class="sub-container"><a class="sub-logo-container" href="../minerva_voucher/index.html"><img class="rust-logo" src="../rust-logo.svg" alt="logo"></a><nav class="sub"><div class="theme-picker hidden"><button id="theme-picker" aria-label="Pick another theme!" aria-haspopup="menu" title="themes"><img width="22" height="22" alt="Pick another theme!" src="../brush.svg"></button><div id="theme-choices" role="menu"></div></div><form class="search-form"><div class="search-container"><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><button type="button" id="help-button" title="help">?</button><a id="settings-menu" href="../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../wheel.svg"></a></div></form></nav></div><section id="main-content" class="content"><div class="main-heading">
-    <h1 class="fqn"><span class="in-band">Crate <a class="mod" href="#">minerva_voucher</a><button id="copy-path" onclick="copy_path(this)" title="Copy item path to clipboard"><img src="../clipboard.svg" width="19" height="18" alt="Copy item path"></button></span></h1><span class="out-of-band"><a class="srclink" href="../src/minerva_voucher/lib.rs.html#1-309" title="goto source code">source</a> · <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">[<span class="inner">&#x2212;</span>]</a></span></div><details class="rustdoc-toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>This crate implements a compact CBOR-encoded voucher defined by <a href="https://www.ietf.org/archive/id/draft-ietf-anima-constrained-voucher-15.html">Constrained BRSKI</a>.</p>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="This crate implements a compact CBOR-encoded voucher defined by Constrained BRSKI."><meta name="keywords" content="rust, rustlang, rust-lang, minerva_voucher"><title>minerva_voucher - Rust</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" type="text/css" href="../normalize.css"><link rel="stylesheet" type="text/css" href="../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../ayu.css" disabled><link rel="stylesheet" type="text/css" href="../dark.css" disabled><link rel="stylesheet" type="text/css" href="../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../storage.js"></script><script defer src="../crates.js"></script><script defer src="../main.js"></script><noscript><link rel="stylesheet" href="../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../favicon.svg"></head><body class="rustdoc mod crate"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle">&#9776;</button><a class="sidebar-logo" href="../minerva_voucher/index.html"><div class="logo-container"><img class="rust-logo" src="../rust-logo.svg" alt="logo"></div></a><h2 class="location"></h2></nav><nav class="sidebar"><a class="sidebar-logo" href="../minerva_voucher/index.html"><div class="logo-container"><img class="rust-logo" src="../rust-logo.svg" alt="logo"></div></a><h2 class="location"><a href="#">Crate minerva_voucher</a></h2><div class="sidebar-elems"><div class="block"><ul><li class="version">Version 0.8.1</li><li><a id="all-types" href="all.html">All Items</a></li></ul></div><section><div class="block"><ul><li><a href="#modules">Modules</a></li><li><a href="#macros">Macros</a></li><li><a href="#structs">Structs</a></li><li><a href="#enums">Enums</a></li><li><a href="#traits">Traits</a></li><li><a href="#functions">Functions</a></li></ul></div></section></div></nav><main><div class="width-limiter"><div class="sub-container"><a class="sub-logo-container" href="../minerva_voucher/index.html"><img class="rust-logo" src="../rust-logo.svg" alt="logo"></a><nav class="sub"><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><button type="button">?</button></div><div id="settings-menu" tabindex="-1"><a href="../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../wheel.svg"></a></div></div></form></nav></div><section id="main-content" class="content"><div class="main-heading"><h1 class="fqn"><span class="in-band">Crate <a class="mod" href="#">minerva_voucher</a><button id="copy-path" onclick="copy_path(this)" title="Copy item path to clipboard"><img src="../clipboard.svg" width="19" height="18" alt="Copy item path"></button></span></h1><span class="out-of-band"><a class="srclink" href="../src/minerva_voucher/lib.rs.html#1-311">source</a> · <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">[<span class="inner">&#x2212;</span>]</a></span></div><details class="rustdoc-toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>This crate implements a compact CBOR-encoded voucher defined by <a href="https://www.ietf.org/archive/id/draft-ietf-anima-constrained-voucher-15.html">Constrained BRSKI</a>.</p>
 <p><a href="https://github.com/AnimaGUS-minerva/voucher/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" /></a>
 <a href="https://github.com/AnimaGUS-minerva/voucher"><img src="https://img.shields.io/github/languages/code-size/AnimaGUS-minerva/voucher" /></a></p>
-<h2 id="examples" class="section-header"><a href="#examples">Examples</a></h2>
+<h2 id="examples"><a href="#examples">Examples</a></h2>
 <p>In this section, we first introduce the <a href="struct.Voucher.html" title="Voucher"><code>Voucher</code></a> abstraction offered by this crate,
 along with its API methods used when dealing with the BRSKI voucher attributes.
 We then present some practical examples on how to perfrom CBOR encoding/decoding of BRSKI vouchers
 with the underlying COSE signing and validation operations also considered.</p>
-<h3 id="1-using-the-voucher-struct" class="section-header"><a href="#1-using-the-voucher-struct">1. Using the <code>Voucher</code> struct</a></h3>
+<h3 id="1-using-the-voucher-struct"><a href="#1-using-the-voucher-struct">1. Using the <code>Voucher</code> struct</a></h3>
 <p>The <a href="struct.Voucher.html" title="Voucher"><code>Voucher</code></a> struct abstracts both <a href="https://www.ietf.org/archive/id/draft-ietf-anima-constrained-voucher-15.html#name-voucher-request-artifact">“Voucher Request”</a> and <a href="https://www.ietf.org/archive/id/draft-ietf-anima-constrained-voucher-15.html#name-voucher-artifact">“Voucher”</a> artifacts of
 Constrained BRSKI. Once a <code>Voucher</code> is instatiated, we can manage its attributes
 using the dedicated API methods (<a href="struct.Voucher.html#method.get"><code>get</code></a>, <a href="struct.Voucher.html#method.set"><code>set</code></a>, <a href="struct.Voucher.html#method.remove"><code>remove</code></a>, etc.).
@@ -20,14 +14,14 @@ These methods operate on the <a href="attr/enum.Attr.html" title="Attr"><code>At
 its discriminant constants <a href="attr/index.html"><code>ATTR_*</code></a>) that represents the BRSKI voucher attributes.</p>
 <p>In this example, we demonstrate how to use the <code>Voucher</code> struct with a “voucher request” instance
 created by <code>Voucher::new_vrq()</code>.</p>
-<h5 id="notes" class="section-header"><a href="#notes">Notes</a></h5>
+<h5 id="notes"><a href="#notes">Notes</a></h5>
 <p>All of the <code>Voucher</code> struct’s methods shown below can also be called by a “voucher” instance
 created by <code>Voucher::new_vch()</code>.</p>
 
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use</span> <span class="ident">minerva_voucher</span>::{<span class="ident">Voucher</span>, <span class="ident">attr</span>::<span class="kw-2">*</span>};
 
 <span class="comment">// Create an empty voucher request.</span>
-<span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">vrq</span> <span class="op">=</span> <span class="ident">Voucher::new_vrq</span>();
+<span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">vrq</span> = <span class="ident">Voucher::new_vrq</span>();
 
 <span class="comment">// Add some attributes.</span>
 <span class="ident">vrq</span>.<span class="ident">set</span>(<span class="ident">Attr::Assertion</span>(<span class="ident">Assertion::Proximity</span>))
@@ -56,35 +50,34 @@ conveniently created as:</p>
 
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use</span> <span class="ident">minerva_voucher</span>::{<span class="ident">Voucher</span>, <span class="ident">attr</span>::<span class="kw-2">*</span>, <span class="ident">vrq</span>, <span class="ident">vch</span>};
 
-<span class="kw">let</span> <span class="ident">v</span> <span class="op">=</span> <span class="macro">vrq!</span>[
+<span class="kw">let</span> <span class="ident">v</span> = <span class="macro">vrq!</span>[
     <span class="ident">Attr::Assertion</span>(<span class="ident">Assertion::Proximity</span>),
     <span class="ident">Attr::SerialNumber</span>(<span class="string">b&quot;00-11-22-33-44-55&quot;</span>.<span class="ident">to_vec</span>())];
 
 <span class="macro">assert!</span>(<span class="ident">v</span>.<span class="ident">is_vrq</span>());
 <span class="macro">assert_eq!</span>(<span class="ident">v</span>.<span class="ident">len</span>(), <span class="number">2</span>);
 
-<span class="kw">let</span> <span class="ident">v</span> <span class="op">=</span> <span class="macro">vch!</span>[
+<span class="kw">let</span> <span class="ident">v</span> = <span class="macro">vch!</span>[
     <span class="ident">Attr::Assertion</span>(<span class="ident">Assertion::Logged</span>),
     <span class="ident">Attr::SerialNumber</span>(<span class="string">b&quot;00-11-22-33-44-55&quot;</span>.<span class="ident">to_vec</span>())];
 
 <span class="macro">assert!</span>(<span class="ident">v</span>.<span class="ident">is_vch</span>());
 <span class="macro">assert_eq!</span>(<span class="ident">v</span>.<span class="ident">len</span>(), <span class="number">2</span>);</code></pre></div>
-<h3 id="2-encoding-a-voucher-into-cbor" class="section-header"><a href="#2-encoding-a-voucher-into-cbor">2. Encoding a <code>Voucher</code> into CBOR</a></h3>
+<h3 id="2-encoding-a-voucher-into-cbor"><a href="#2-encoding-a-voucher-into-cbor">2. Encoding a <code>Voucher</code> into CBOR</a></h3>
 <p>To encode a <a href="struct.Voucher.html" title="Voucher"><code>Voucher</code></a> into a compact CBOR-encoded voucher, use <a href="struct.Voucher.html#method.serialize" title="Voucher::serialize"><code>Voucher::serialize</code></a>.</p>
 <p>In this example, we instantiate a new voucher request, populate it with some attributes,
 COSE-sign it, and finally encode it into a CBOR byte string.</p>
 
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use</span> <span class="ident">minerva_voucher</span>::{<span class="ident">Voucher</span>, <span class="ident">attr</span>::<span class="kw-2">*</span>, <span class="ident">SignatureAlgorithm</span>, <span class="ident">Sign</span>};
 
-<span class="kw">static</span> <span class="ident">KEY_PEM_F2_00_02</span>: <span class="kw-2">&amp;</span>[<span class="ident">u8</span>] <span class="op">=</span> <span class="macro">core::include_bytes!</span>(
+<span class="kw">static</span> <span class="ident">KEY_PEM_F2_00_02</span>: <span class="kw-2">&amp;</span>[<span class="ident">u8</span>] = <span class="macro">core::include_bytes!</span>(
     <span class="macro">concat!</span>(<span class="macro">env!</span>(<span class="string">&quot;CARGO_MANIFEST_DIR&quot;</span>), <span class="string">&quot;/data/00-D0-E5-F2-00-02/key.pem&quot;</span>));
 
-<span class="comment">// This is required when the `Sign` trait is backed by mbedtls v3.</span>
-<span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v3&quot;</span>)]</span>
+<span class="comment">// This is required when the `Sign` trait is backed by mbedtls.</span>
 <span class="ident">minerva_voucher::init_psa_crypto</span>();
 
 <span class="comment">// Create a voucher request with five attributes and COSE-sign it.</span>
-<span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">vrq</span> <span class="op">=</span> <span class="ident">Voucher::new_vrq</span>();
+<span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">vrq</span> = <span class="ident">Voucher::new_vrq</span>();
 <span class="macro">assert!</span>(<span class="ident">vrq</span>
     .<span class="ident">set</span>(<span class="ident">Attr::Assertion</span>(<span class="ident">Assertion::Proximity</span>))
     .<span class="ident">set</span>(<span class="ident">Attr::CreatedOn</span>(<span class="number">1599086034</span>))
@@ -95,10 +88,10 @@ COSE-sign it, and finally encode it into a CBOR byte string.</p>
     .<span class="ident">is_ok</span>());
 
 <span class="comment">// Encode the voucher request.</span>
-<span class="kw">let</span> <span class="ident">cbor</span> <span class="op">=</span> <span class="ident">vrq</span>.<span class="ident">serialize</span>().<span class="ident">unwrap</span>();
+<span class="kw">let</span> <span class="ident">cbor</span> = <span class="ident">vrq</span>.<span class="ident">serialize</span>().<span class="ident">unwrap</span>();
 
 <span class="macro">assert_eq!</span>(<span class="ident">cbor</span>.<span class="ident">len</span>(), <span class="number">630</span>);</code></pre></div>
-<h3 id="3-decoding-a-cbor-encoded-voucher-into-a-voucher" class="section-header"><a href="#3-decoding-a-cbor-encoded-voucher-into-a-voucher">3. Decoding a CBOR-encoded voucher into a <code>Voucher</code></a></h3>
+<h3 id="3-decoding-a-cbor-encoded-voucher-into-a-voucher"><a href="#3-decoding-a-cbor-encoded-voucher-into-a-voucher">3. Decoding a CBOR-encoded voucher into a <code>Voucher</code></a></h3>
 <p>To decode a COSE-signed CBOR-encoded voucher, use the
 <a href="struct.Voucher.html#impl-TryFrom%3C%26%27_%20%5Bu8%5D%3E"><code>TryFrom&lt;&amp;u8&gt;</code></a>
 trait implemented for the <a href="struct.Voucher.html" title="Voucher"><code>Voucher</code></a> struct.</p>
@@ -110,17 +103,16 @@ COSE-validate it, and iterate through each attribute in the voucher.</p>
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use</span> <span class="ident">minerva_voucher</span>::{<span class="ident">Voucher</span>, <span class="ident">attr</span>::<span class="kw-2">*</span>, <span class="ident">Validate</span>};
 <span class="kw">use</span> <span class="ident">core::convert::TryFrom</span>;
 
-<span class="kw">static</span> <span class="ident">VCH_F2_00_02</span>: <span class="kw-2">&amp;</span>[<span class="ident">u8</span>] <span class="op">=</span> <span class="macro">core::include_bytes!</span>(
+<span class="kw">static</span> <span class="ident">VCH_F2_00_02</span>: <span class="kw-2">&amp;</span>[<span class="ident">u8</span>] = <span class="macro">core::include_bytes!</span>(
     <span class="macro">concat!</span>(<span class="macro">env!</span>(<span class="string">&quot;CARGO_MANIFEST_DIR&quot;</span>), <span class="string">&quot;/data/00-D0-E5-F2-00-02/voucher_00-D0-E5-F2-00-02.vch&quot;</span>));
-<span class="kw">static</span> <span class="ident">MASA_CRT_F2_00_02</span>: <span class="kw-2">&amp;</span>[<span class="ident">u8</span>] <span class="op">=</span> <span class="macro">core::include_bytes!</span>(
+<span class="kw">static</span> <span class="ident">MASA_CRT_F2_00_02</span>: <span class="kw-2">&amp;</span>[<span class="ident">u8</span>] = <span class="macro">core::include_bytes!</span>(
     <span class="macro">concat!</span>(<span class="macro">env!</span>(<span class="string">&quot;CARGO_MANIFEST_DIR&quot;</span>), <span class="string">&quot;/data/00-D0-E5-F2-00-02/masa.crt&quot;</span>));
 
-<span class="comment">// This is required when the `Validate` trait is backed by mbedtls v3.</span>
-<span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v3&quot;</span>)]</span>
+<span class="comment">// This is required when the `Validate` trait is backed by mbedtls.</span>
 <span class="ident">minerva_voucher::init_psa_crypto</span>();
 
 <span class="comment">// Decode the voucher.</span>
-<span class="kw">let</span> <span class="ident">vch</span> <span class="op">=</span> <span class="ident">Voucher::try_from</span>(<span class="ident">VCH_F2_00_02</span>).<span class="ident">unwrap</span>();
+<span class="kw">let</span> <span class="ident">vch</span> = <span class="ident">Voucher::try_from</span>(<span class="ident">VCH_F2_00_02</span>).<span class="ident">unwrap</span>();
 
 <span class="comment">// COSE-validate the voucher.</span>
 <span class="macro">assert!</span>(<span class="ident">vch</span>.<span class="ident">validate</span>(<span class="prelude-val">Some</span>(<span class="ident">MASA_CRT_F2_00_02</span>)).<span class="ident">is_ok</span>());
@@ -141,35 +133,28 @@ COSE-validate it, and iterate through each attribute in the voucher.</p>
         <span class="kw">_</span> =&gt; <span class="macro">panic!</span>(),
     }
 }</code></pre></div>
-<h5 id="notes-1" class="section-header"><a href="#notes-1">Notes</a></h5>
+<h5 id="notes-1"><a href="#notes-1">Notes</a></h5>
 <p>Instead of <code>TryFrom</code>, we could use <code>TryInto</code> (via <code>use core::convert::TryInto;</code>) to
 decode the same voucher as</p>
 <p><code>let vch: Voucher = VCH_F2_00_02.try_into().unwrap();</code></p>
 <p>In this case, the type annotation <code>: Voucher</code> is needed.</p>
-</div></details><h2 id="modules" class="small-section-header"><a href="#modules">Modules</a></h2>
-<div class="item-table"><div class="item-row"><div class="item-left module-item"><a class="mod" href="attr/index.html" title="minerva_voucher::attr mod">attr</a></div><div class="item-right docblock-short"><p>Enums and constants for voucher attributes.</p>
-</div></div><div class="item-row"><div class="item-left module-item"><a class="mod" href="debug/index.html" title="minerva_voucher::debug mod">debug</a></div><div class="item-right docblock-short"></div></div></div><h2 id="macros" class="small-section-header"><a href="#macros">Macros</a></h2>
-<div class="item-table"><div class="item-row"><div class="item-left module-item"><a class="macro" href="macro.vch.html" title="minerva_voucher::vch macro">vch</a></div><div class="item-right docblock-short"><p>Creates a <a href="https://www.ietf.org/archive/id/draft-ietf-anima-constrained-voucher-15.html#name-voucher-artifact">“Voucher”</a> instance with a known list of attributes.</p>
+</div></details><h2 id="modules" class="small-section-header"><a href="#modules">Modules</a></h2><div class="item-table"><div class="item-row"><div class="item-left module-item"><a class="mod" href="attr/index.html" title="minerva_voucher::attr mod">attr</a></div><div class="item-right docblock-short"><p>Enums and constants for voucher attributes.</p>
+</div></div><div class="item-row"><div class="item-left module-item"><a class="mod" href="debug/index.html" title="minerva_voucher::debug mod">debug</a></div><div class="item-right docblock-short"></div></div></div><h2 id="macros" class="small-section-header"><a href="#macros">Macros</a></h2><div class="item-table"><div class="item-row"><div class="item-left module-item"><a class="macro" href="macro.vch.html" title="minerva_voucher::vch macro">vch</a></div><div class="item-right docblock-short"><p>Creates a <a href="https://www.ietf.org/archive/id/draft-ietf-anima-constrained-voucher-15.html#name-voucher-artifact">“Voucher”</a> instance with a known list of attributes.</p>
 </div></div><div class="item-row"><div class="item-left module-item"><a class="macro" href="macro.vrq.html" title="minerva_voucher::vrq macro">vrq</a></div><div class="item-right docblock-short"><p>Creates a <a href="https://www.ietf.org/archive/id/draft-ietf-anima-constrained-voucher-15.html#name-voucher-request-artifact">“Voucher Request”</a> instance with a known list of attributes.</p>
-</div></div></div><h2 id="structs" class="small-section-header"><a href="#structs">Structs</a></h2>
-<div class="item-table"><div class="item-row"><div class="item-left module-item"><a class="struct" href="struct.Voucher.html" title="minerva_voucher::Voucher struct">Voucher</a></div><div class="item-right docblock-short"><p>A structure implementing both
+</div></div></div><h2 id="structs" class="small-section-header"><a href="#structs">Structs</a></h2><div class="item-table"><div class="item-row"><div class="item-left module-item"><a class="struct" href="struct.Voucher.html" title="minerva_voucher::Voucher struct">Voucher</a></div><div class="item-right docblock-short"><p>A structure implementing both
 <a href="https://www.ietf.org/archive/id/draft-ietf-anima-constrained-voucher-15.html#name-voucher-request-artifact">“Voucher Request”</a>
 and
 <a href="https://www.ietf.org/archive/id/draft-ietf-anima-constrained-voucher-15.html#name-voucher-artifact">“Voucher”</a>
 artifacts of
 <a href="https://www.ietf.org/archive/id/draft-ietf-anima-constrained-voucher-15.html">Constrained BRSKI</a>.</p>
-</div></div></div><h2 id="enums" class="small-section-header"><a href="#enums">Enums</a></h2>
-<div class="item-table"><div class="item-row"><div class="item-left module-item"><a class="enum" href="enum.SignatureAlgorithm.html" title="minerva_voucher::SignatureAlgorithm enum">SignatureAlgorithm</a></div><div class="item-right docblock-short"><p>An enum identifying supported signature algorithms.
+</div></div></div><h2 id="enums" class="small-section-header"><a href="#enums">Enums</a></h2><div class="item-table"><div class="item-row"><div class="item-left module-item"><a class="enum" href="enum.SignatureAlgorithm.html" title="minerva_voucher::SignatureAlgorithm enum">SignatureAlgorithm</a></div><div class="item-right docblock-short"><p>An enum identifying supported signature algorithms.
 Currently ES256 (ECDSA with P256 and SHA256), ES384 (ECDSA with P384 and SHA384)
 ES512 (ECDSA with P521 and SHA512), and PS256 (RSASSA-PSS with SHA256)
 are supported. Note that with PS256, the salt length is defined
 to be 32 bytes.</p>
 </div></div><div class="item-row"><div class="item-left module-item"><a class="enum" href="enum.VoucherError.html" title="minerva_voucher::VoucherError enum">VoucherError</a></div><div class="item-right docblock-short"><p>Errors that can be returned from <code>Voucher</code> functions.</p>
-</div></div></div><h2 id="traits" class="small-section-header"><a href="#traits">Traits</a></h2>
-<div class="item-table"><div class="item-row"><div class="item-left module-item"><a class="trait" href="trait.Sign.html" title="minerva_voucher::Sign trait">Sign</a></div><div class="item-right docblock-short"><p>Used to COSE-sign a <code>Voucher</code>.</p>
+</div></div></div><h2 id="traits" class="small-section-header"><a href="#traits">Traits</a></h2><div class="item-table"><div class="item-row"><div class="item-left module-item"><a class="trait" href="trait.Sign.html" title="minerva_voucher::Sign trait">Sign</a></div><div class="item-right docblock-short"><p>Used to COSE-sign a <code>Voucher</code>.</p>
 </div></div><div class="item-row"><div class="item-left module-item"><a class="trait" href="trait.Validate.html" title="minerva_voucher::Validate trait">Validate</a></div><div class="item-right docblock-short"><p>Used to COSE-validate a <code>Voucher</code>.</p>
-</div></div></div><h2 id="functions" class="small-section-header"><a href="#functions">Functions</a></h2>
-<div class="item-table"><div class="item-row"><div class="item-left module-item"><a class="fn" href="fn.init_psa_crypto.html" title="minerva_voucher::init_psa_crypto fn">init_psa_crypto</a></div><div class="item-right docblock-short"><p>Initializes the <a href="https://armmbed.github.io/mbed-crypto/html/">PSA cryptography API</a>
-context.  Call this function when using the <code>Sign</code>/<code>Validate</code> trait backed by mbedtls v3.</p>
-</div></div></div></section><section id="search" class="content hidden"></section></div></main><div id="rustdoc-vars" data-root-path="../" data-current-crate="minerva_voucher" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.60.0-nightly (84322efad 2022-01-23)" ></div>
-</body></html>
+</div></div></div><h2 id="functions" class="small-section-header"><a href="#functions">Functions</a></h2><div class="item-table"><div class="item-row"><div class="item-left module-item"><a class="fn" href="fn.init_psa_crypto.html" title="minerva_voucher::init_psa_crypto fn">init_psa_crypto</a></div><div class="item-right docblock-short"><p>Initializes the <a href="https://armmbed.github.io/mbed-crypto/html/">PSA cryptography API</a>
+context.  Call this function when using the <code>Sign</code>/<code>Validate</code> trait backed by mbedtls.</p>
+</div></div></div></section></div></main><div id="rustdoc-vars" data-root-path="../" data-current-crate="minerva_voucher" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.65.0-nightly (75b7e52e9 2022-08-13)" ></div></body></html>
