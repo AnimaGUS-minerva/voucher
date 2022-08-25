@@ -1,3 +1,4 @@
+#[allow(unused_imports)]
 use crate::{Vec, SignatureAlgorithm};
 
 #[cfg(any(feature = "mbedtls-backend", feature = "sign", feature = "validate"))]
