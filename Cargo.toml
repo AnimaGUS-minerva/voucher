@@ -19,7 +19,7 @@ mbedtls-backend = ["minerva-mbedtls"]
 [dependencies]
 mcu-if = { git = "https://github.com/AnimaGUS-minerva/mcu-if", rev = "984b8dd" }
 cose = { git = "https://github.com/j-devel/cose-rust", rev = "b07436f", default-features = false }
-minerva-mbedtls = { git = "https://github.com/AnimaGUS-minerva/minerva-mbedtls", rev = "363d79a", optional = true }
+minerva-mbedtls = { git = "https://github.com/AnimaGUS-minerva/minerva-mbedtls", rev = "530df52", optional = true }
 
 [dev-dependencies]
 hex-literal = { git = "https://github.com/AnimaGUS-minerva/utils.git", branch = "allow-hash-comments-in-hex" }
