@@ -171,6 +171,7 @@
 //! ["Voucher"]: https://www.ietf.org/archive/id/draft-ietf-anima-constrained-voucher-15.html#name-voucher-artifact
 #![no_std]
 
+#![cfg_attr(target_arch = "xtensa", feature(arbitrary_enum_discriminant))]
 #![feature(core_intrinsics)]
 
 #[cfg(feature = "std")]
