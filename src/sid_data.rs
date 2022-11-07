@@ -1,4 +1,4 @@
-use crate::{println, Vec, BTreeMap, BTreeSet};
+use crate::{println, BTreeMap, BTreeSet};
 use crate::{VoucherError, debug_println};
 use super::sid::{CborType, Cbor, Sid, SidDisc, TopLevel, SID_VCH_TOP_LEVEL, SID_VRQ_TOP_LEVEL};
 use super::yang::Yang;
@@ -131,6 +131,7 @@ impl TryFrom<CborType> for SidData {
     }
 }
 
+#[cfg(debug_assertions)]
 pub fn content_comp(a: &[u8], b: &[u8]) -> bool {
     debug_println!("content_comp(): {} {}", a.len(), b.len());
     if a.len() != b.len() { return false; }
@@ -143,6 +144,7 @@ pub fn content_comp(a: &[u8], b: &[u8]) -> bool {
     a == b
 }
 
+#[cfg(debug_assertions)]
 pub fn content_comp_permissive<'x>(a: &'x[u8], b: &'x[u8]) -> bool {
     let mask = |s: &'x[u8]| {
         // Mask CBOR `CborType::{StringAsBytes,Bytes}` header bytes (including some false positives)
@@ -157,8 +159,8 @@ pub fn content_comp_permissive<'x>(a: &'x[u8], b: &'x[u8]) -> bool {
     };
 
     content_comp(
-        &a.iter().enumerate().map(mask(a)).collect::<Vec<_>>(),
-        &b.iter().enumerate().map(mask(b)).collect::<Vec<_>>())
+        &a.iter().enumerate().map(mask(a)).collect::<crate::Vec<_>>(),
+        &b.iter().enumerate().map(mask(b)).collect::<crate::Vec<_>>())
 }
 
 #[test]
