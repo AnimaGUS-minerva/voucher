@@ -218,6 +218,8 @@ pub mod debug {
 mod voucher;
 pub use voucher::{Voucher, VoucherError, SignatureAlgorithm};
 
+pub const VERSION: &str = env!("CARGO_PKG_VERSION");
+
 //
 
 /// Used to COSE-sign a `Voucher`.
