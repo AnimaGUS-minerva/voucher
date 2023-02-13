@@ -1,6 +1,6 @@
 [package]
 name = "minerva-voucher"
-version = "0.8.6"
+version = "0.8.7"
 description = "Library to use BRSKI (https://datatracker.ietf.org/doc/html/rfc8995) Voucher in Rust"
 edition = "2018"
 authors = ["ANIMA Minerva toolkit"]
@@ -17,7 +17,7 @@ validate = ["minerva-mbedtls"]
 mbedtls-backend = ["minerva-mbedtls"]
 
 [dependencies]
-mcu-if = { git = "https://github.com/AnimaGUS-minerva/mcu-if", rev = "f228240" }
+mcu-if = { git = "https://github.com/AnimaGUS-minerva/mcu-if", rev = "7f30df8" }
 cose = { git = "https://github.com/j-devel/cose-rust", rev = "b07436f", default-features = false }
 minerva-mbedtls = { git = "https://github.com/AnimaGUS-minerva/minerva-mbedtls", rev = "6480bb6", optional = true }
 
