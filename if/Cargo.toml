@@ -1,0 +1,18 @@
+[package]
+name = "minerva-voucher-if"
+version = "0.1.0"
+edition = "2021"
+authors = ["ANIMA Minerva toolkit"]
+
+[lib]
+name = "voucher_if"
+crate-type = ["staticlib"]
+path = "src/lib.rs"
+
+[features]
+default = []
+std = []
+
+[dependencies]
+mcu-if = { git = "https://github.com/AnimaGUS-minerva/mcu-if", rev = "7f30df8", features=["allocator"] }
+minerva-voucher = { path = ".." }
