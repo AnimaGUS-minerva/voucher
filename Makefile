@@ -36,9 +36,12 @@ test-i686:
 	cargo test --target i686-unknown-linux-gnu --no-default-features --features "sign validate"
 test-example-rust-mbedtls:
 	make -C examples/rust-mbedtls test
+test-voucher-if:
+	make -C if test
 
 test:
 	make test-nostd
 	make test-std
 	if [ "$$TARGET" = "ci" ]; then make test-i686; fi
 	make test-example-rust-mbedtls
+	make test-voucher-if
