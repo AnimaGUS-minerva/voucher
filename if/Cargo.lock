@@ -127,7 +127,7 @@ dependencies = [
 [[package]]
 name = "core2"
 version = "0.3.0-alpha.1"
-source = "git+https://github.com/AnimaGUS-minerva/core2?rev=d235b52#d235b529f2eefb3bacb5d43e4ab6551119d77073"
+source = "git+https://github.com/AnimaGUS-minerva/core2?rev=9138767#91387677a44137e80e4596a1ea81236b4f1968df"
 dependencies = [
  "memchr",
 ]
@@ -225,9 +225,9 @@ dependencies = [
 [[package]]
 name = "mcu-if"
 version = "0.3.0"
-source = "git+https://github.com/AnimaGUS-minerva/mcu-if?rev=7f30df8#7f30df81fc8f5166e756e2b40b1c20b066a9e3f1"
+source = "git+https://github.com/AnimaGUS-minerva/mcu-if?rev=254de7d#254de7d3d411f5586ac50fc67e11c0441de5345f"
 dependencies = [
- "core2 0.3.0-alpha.1 (git+https://github.com/AnimaGUS-minerva/core2?rev=d235b52)",
+ "core2 0.3.0-alpha.1 (git+https://github.com/AnimaGUS-minerva/core2?rev=9138767)",
  "libc-print",
 ]
 
@@ -240,7 +240,7 @@ checksum = "2dffe52ecf27772e601905b7522cb4ef790d2cc203488bbd0e2fe85fcb74566d"
 [[package]]
 name = "minerva-mbedtls"
 version = "0.4.21"
-source = "git+https://github.com/AnimaGUS-minerva/minerva-mbedtls?rev=4dca03f#4dca03fc656a0859078410f2747aa48413e33be7"
+source = "git+https://github.com/AnimaGUS-minerva/minerva-mbedtls?rev=5661565#566156591d86bd87becfd6cf998cf0e013ac6650"
 dependencies = [
  "mcu-if",
  "psa-crypto",
@@ -257,7 +257,7 @@ dependencies = [
 
 [[package]]
 name = "minerva-voucher-if"
-version = "0.1.1"
+version = "0.1.2"
 dependencies = [
  "mcu-if",
  "minerva-voucher",
@@ -301,9 +301,9 @@ checksum = "19b17cddbe7ec3f8bc800887bab5e717348c95ea2ca0b1bf0837fb964dc67099"
 
 [[package]]
 name = "proc-macro2"
-version = "1.0.56"
+version = "1.0.67"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2b63bdb0cd06f1f4dedf69b254734f9b45af66e4a031e42a7480257d9898b435"
+checksum = "3d433d9f1a3e8c1263d9456598b16fec66f4acc9a74dacffd35c7bb09b3a1328"
 dependencies = [
  "unicode-ident",
 ]
