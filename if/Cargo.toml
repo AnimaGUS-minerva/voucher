@@ -14,5 +14,5 @@ default = []
 std = []
 
 [dependencies]
-mcu-if = { git = "https://github.com/AnimaGUS-minerva/mcu-if", rev = "254de7d", features=["allocator"] }
+mcu-if = { git = "https://github.com/AnimaGUS-minerva/mcu-if", rev = "da77a48", features=["allocator"] }
 minerva-voucher = { path = ".." }
