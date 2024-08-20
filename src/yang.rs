@@ -24,7 +24,7 @@ pub enum Yang {
 
 impl Yang {
     pub fn disc(&self) -> YangDisc {
-        core::intrinsics::discriminant_value(self)
+        unsafe { *<*const _>::from(self).cast::<u8>() }
     }
 
     fn raw_enumeration(cbor: &CborType) -> Result<attr::Assertion, VoucherError> {

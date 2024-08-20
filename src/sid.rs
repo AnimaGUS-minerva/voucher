@@ -155,7 +155,7 @@ macro_rules! to_attr {
 
 impl Sid {
     pub fn disc(&self) -> SidDisc {
-        core::intrinsics::discriminant_value(self)
+        unsafe { *<*const _>::from(self).cast::<u64>() }
     }
 
     pub fn as_attr(&self) -> Option<&crate::Attr> {
