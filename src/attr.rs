@@ -63,7 +63,7 @@ pub enum Attr {
 
 impl Attr {
     pub fn disc(&self) -> AttrDisc {
-        core::intrinsics::discriminant_value(self)
+        unsafe { *<*const _>::from(self).cast::<u8>() }
     }
 
     pub fn into_yang(self) -> Yang {

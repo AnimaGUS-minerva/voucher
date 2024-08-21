@@ -172,7 +172,6 @@
 #![no_std]
 
 #![cfg_attr(target_arch = "xtensa", feature(arbitrary_enum_discriminant))]
-#![feature(core_intrinsics)]
 
 #[cfg(feature = "std")]
 #[macro_use]
