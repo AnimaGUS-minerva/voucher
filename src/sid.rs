@@ -43,6 +43,7 @@ pub const SID_VRQ_SERIAL_NUMBER: SidDisc =                    2514;
 #[repr(u64)]
 #[derive(Clone, Eq, Debug)]
 pub enum Sid {
+    #[allow(dead_code)]
     VchTopLevel(TopLevel) =                  SID_VCH_TOP_LEVEL,
     VchAssertion(Yang) =                     SID_VCH_ASSERTION,
     VchCreatedOn(Yang) =                     SID_VCH_CREATED_ON,
@@ -55,6 +56,7 @@ pub enum Sid {
     VchPinnedDomainPubk(Yang) =              SID_VCH_PINNED_DOMAIN_PUBK,
     VchPinnedDomainPubkSha256(Yang) =        SID_VCH_PINNED_DOMAIN_PUBK_SHA256,
     VchSerialNumber(Yang) =                  SID_VCH_SERIAL_NUMBER,
+    #[allow(dead_code)]
     VrqTopLevel(TopLevel) =                  SID_VRQ_TOP_LEVEL,
     VrqAssertion(Yang) =                     SID_VRQ_ASSERTION,
     VrqCreatedOn(Yang) =                     SID_VRQ_CREATED_ON,
