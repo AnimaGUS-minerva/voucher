@@ -18,7 +18,7 @@ mbedtls-backend = ["minerva-mbedtls"]
 
 [dependencies]
 mcu-if = { git = "https://github.com/AnimaGUS-minerva/mcu-if", rev = "da77a48" }
-cose = { git = "https://github.com/j-devel/cose-rust", rev = "b07436f", default-features = false }
+cose = { git = "https://github.com/AnimaGUS-minerva/cose-rust", tag = "fosdem2025-hacking", default-features = false }
 minerva-mbedtls = { git = "https://github.com/AnimaGUS-minerva/minerva-mbedtls", optional = true, features = ["std"] }
 #minerva-mbedtls = { path = "/ssw/projects/trentonio/minerva-mbedtls", optional = true, features = ["std"] }
 #psa-crypto      = { path = "/ssw/projects/trentonio/rust-psa-crypto/psa-crypto", features=["minerva", "static"] }
