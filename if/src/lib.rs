@@ -136,20 +136,20 @@ pub extern "C" fn vi_square(input: i32) -> i32 {
 //
 
 #[no_mangle]
-pub extern "C" fn vi_validate(ptr: *const u8, sz: usize) -> bool {
+pub extern "C" fn vi_validate(ptr: *const u8, sz: usize) -> u8 {
     let raw_voucher = u8_slice_from(ptr, sz);
     println!("@@ validating raw_voucher: [len={}]", raw_voucher.len());
 
-    Voucher::try_from(raw_voucher).unwrap().validate(None).is_ok()
+    u8::from(Voucher::try_from(raw_voucher).unwrap().validate(None).is_ok())
 }
 
 #[no_mangle]
-pub extern "C" fn vi_validate_with_pem(ptr: *const u8, sz: usize, ptr_pem: *const u8, sz_pem: usize) -> bool {
+pub extern "C" fn vi_validate_with_pem(ptr: *const u8, sz: usize, ptr_pem: *const u8, sz_pem: usize) -> u8 {
     let raw_voucher = u8_slice_from(ptr, sz);
     let pem = u8_slice_from(ptr_pem, sz_pem);
     println!("@@ validating raw_voucher with pem: [len={}] [len={}]", raw_voucher.len(), pem.len());
 
-    Voucher::try_from(raw_voucher).unwrap().validate(Some(pem)).is_ok()
+    u8::from(Voucher::try_from(raw_voucher).unwrap().validate(Some(pem)).is_ok())
 }
 
 //
@@ -211,20 +211,21 @@ fn provider_allocate(pp: *mut ProviderPtr, vou: Voucher) {
 }
 
 #[no_mangle]
-pub extern "C" fn vi_provider_allocate(pp: *mut ProviderPtr, is_vrq: bool) {
+pub extern "C" fn vi_provider_allocate(pp: *mut ProviderPtr, is_vrq: u8) {
+    let is_vrq = is_vrq != 0u8;
     let vou = if is_vrq { Voucher::new_vrq() } else { Voucher::new_vch() };
     provider_allocate(pp, vou);
 }
 
 #[no_mangle]
-pub extern "C" fn vi_provider_allocate_from_cbor(pp: *mut ProviderPtr, buf: *const u8, sz: usize) -> bool {
+pub extern "C" fn vi_provider_allocate_from_cbor(pp: *mut ProviderPtr, buf: *const u8, sz: usize) -> u8 {
     let cbor = u8_slice_from(buf, sz);
 
     if let Ok(vou) = Voucher::try_from(cbor) {
         provider_allocate(pp, vou);
-        true
+        u8::from(true)
     } else {
-        false
+        u8::from(false)
     }
 }
 
@@ -241,8 +242,8 @@ pub extern "C" fn vi_provider_free(pp: *mut ProviderPtr) {
 }
 
 #[no_mangle]
-pub extern "C" fn vi_provider_is_vrq(ptr: ProviderPtr) -> bool {
-    get_voucher_ref(ptr).is_vrq()
+pub extern "C" fn vi_provider_is_vrq(ptr: ProviderPtr) -> u8 {
+    u8::from(get_voucher_ref(ptr).is_vrq())
 }
 
 #[no_mangle]
@@ -262,17 +263,17 @@ pub extern "C" fn vi_provider_len(ptr: ProviderPtr) -> usize {
 
 //
 
-fn set_inner(ptr: ProviderPtr, attr: Option<Attr>) -> bool {
+fn set_inner(ptr: ProviderPtr, attr: Option<Attr>) -> u8 {
     if let Some(attr) = attr {
         get_voucher_mut(ptr).set(attr);
-        true
+        u8::from(true)
     } else {
-        false
+        u8::from(false)
     }
 }
 
 #[no_mangle]
-pub extern "C" fn vi_provider_set_attr_int(ptr: ProviderPtr, attr_key: u8, attr_val: u64) -> bool {
+pub extern "C" fn vi_provider_set_attr_int(ptr: ProviderPtr, attr_key: u8, attr_val: u64) -> u8 {
     use Attr::*;
     println!("@@ vi_provider_set_attr_int(): attr_key: {} | attr_val: {}", attr_key, attr_val);
 
@@ -291,10 +292,11 @@ pub extern "C" fn vi_provider_set_attr_int(ptr: ProviderPtr, attr_key: u8, attr_
 }
 
 #[no_mangle]
-pub extern "C" fn vi_provider_set_attr_bool(ptr: ProviderPtr, attr_key: u8, attr_val: bool) -> bool {
+pub extern "C" fn vi_provider_set_attr_bool(ptr: ProviderPtr, attr_key: u8, attr_val: u8) -> u8 {
     use Attr::*;
     println!("@@ vi_provider_set_attr_bool(): attr_key: {} | attr_val: {}", attr_key, attr_val);
 
+    let attr_val = attr_val != 0u8;
     set_inner(ptr, match attr_key {
         ATTR_DOMAIN_CERT_REVOCATION_CHECKS => Some(DomainCertRevocationChecks(attr_val)),
         _ => None,
@@ -302,7 +304,7 @@ pub extern "C" fn vi_provider_set_attr_bool(ptr: ProviderPtr, attr_key: u8, attr
 }
 
 #[no_mangle]
-pub extern "C" fn vi_provider_set_attr_bytes(ptr: ProviderPtr, attr_key: u8, buf: *const u8, sz: usize) -> bool {
+pub extern "C" fn vi_provider_set_attr_bytes(ptr: ProviderPtr, attr_key: u8, buf: *const u8, sz: usize) -> u8 {
     use Attr::*;
     let bytes = u8_slice_from(buf, sz).to_vec();
 
@@ -324,18 +326,18 @@ pub extern "C" fn vi_provider_set_attr_bytes(ptr: ProviderPtr, attr_key: u8, buf
 //
 
 #[no_mangle]
-pub extern "C" fn vi_provider_has_attr_int(ptr: ProviderPtr, attr_key: u8) -> bool {
-    vi_provider_get_int(ptr, attr_key).is_some()
+pub extern "C" fn vi_provider_has_attr_int(ptr: ProviderPtr, attr_key: u8) -> u8 {
+    u8::from(vi_provider_get_int(ptr, attr_key).is_some())
 }
 
 #[no_mangle]
-pub extern "C" fn vi_provider_has_attr_bool(ptr: ProviderPtr, attr_key: u8) -> bool {
-    vi_provider_get_bool(ptr, attr_key).is_some()
+pub extern "C" fn vi_provider_has_attr_bool(ptr: ProviderPtr, attr_key: u8) -> u8 {
+    u8::from(vi_provider_get_bool(ptr, attr_key).is_some())
 }
 
 #[no_mangle]
-pub extern "C" fn vi_provider_has_attr_bytes(ptr: ProviderPtr, attr_key: u8) -> bool {
-    vi_provider_get_bytes(ptr, attr_key).is_some()
+pub extern "C" fn vi_provider_has_attr_bytes(ptr: ProviderPtr, attr_key: u8) -> u8 {
+    u8::from(vi_provider_get_bytes(ptr, attr_key).is_some())
 }
 
 #[no_mangle]
@@ -344,8 +346,8 @@ pub extern "C" fn vi_provider_get_attr_int_or_panic(ptr: ProviderPtr, attr_key: 
 }
 
 #[no_mangle]
-pub extern "C" fn vi_provider_get_attr_bool_or_panic(ptr: ProviderPtr, attr_key: u8) -> bool {
-    vi_provider_get_bool(ptr, attr_key).unwrap()
+pub extern "C" fn vi_provider_get_attr_bool_or_panic(ptr: ProviderPtr, attr_key: u8) -> u8 {
+    u8::from(vi_provider_get_bool(ptr, attr_key).unwrap())
 }
 
 #[no_mangle]
@@ -397,8 +399,8 @@ fn vi_provider_get_bytes(ptr: ProviderPtr, attr_key: u8) -> Option<&'static [u8]
 //
 
 #[no_mangle]
-pub extern "C" fn vi_provider_remove_attr(ptr: ProviderPtr, attr_key: u8) -> bool {
-    get_voucher_mut(ptr).remove(attr_key)
+pub extern "C" fn vi_provider_remove_attr(ptr: ProviderPtr, attr_key: u8) -> u8 {
+    u8::from(get_voucher_mut(ptr).remove(attr_key))
 }
 
 #[no_mangle]
@@ -409,15 +411,15 @@ pub extern "C" fn vi_provider_attr_key_at(ptr: ProviderPtr, n: usize) -> u8 {
 //
 
 #[no_mangle]
-pub extern "C" fn vi_provider_sign(ptr: ProviderPtr, ptr_key: *const u8, sz_key: usize, alg: u8) -> bool {
+pub extern "C" fn vi_provider_sign(ptr: ProviderPtr, ptr_key: *const u8, sz_key: usize, alg: u8) -> u8 {
     let key = u8_slice_from(ptr_key, sz_key);
     println!("@@ vi_provider_sign(): [len_key={}]", key.len());
 
     if let Some(alg) = resolve_alg(alg) {
-        get_voucher_mut(ptr).sign(key, alg).is_ok()
+        u8::from(get_voucher_mut(ptr).sign(key, alg).is_ok())
     } else {
         println!("@@ vi_provider_sign(): invalid `alg`: {}", alg);
-        false
+        u8::from(false)
     }
 }
 
@@ -432,14 +434,14 @@ fn resolve_alg(alg: u8) -> Option<SignatureAlgorithm> {
 }
 
 #[no_mangle]
-pub extern "C" fn vi_provider_validate(ptr: ProviderPtr) -> bool {
-    get_voucher_ref(ptr).validate(None).is_ok()
+pub extern "C" fn vi_provider_validate(ptr: ProviderPtr) -> u8 {
+    u8::from(get_voucher_ref(ptr).validate(None).is_ok())
 }
 
 #[no_mangle]
-pub extern "C" fn vi_provider_validate_with_pem(ptr: ProviderPtr, ptr_pem: *const u8, sz_pem: usize) -> bool {
+pub extern "C" fn vi_provider_validate_with_pem(ptr: ProviderPtr, ptr_pem: *const u8, sz_pem: usize) -> u8 {
     let pem = u8_slice_from(ptr_pem, sz_pem);
-    get_voucher_ref(ptr).validate(Some(pem)).is_ok()
+    u8::from(get_voucher_ref(ptr).validate(Some(pem)).is_ok())
 }
 
 //
