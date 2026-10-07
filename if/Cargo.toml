@@ -1,6 +1,6 @@
 [package]
 name = "minerva-voucher-if"
-version = "0.1.2"
+version = "0.1.3"
 edition = "2021"
 authors = ["ANIMA Minerva toolkit"]
 
@@ -14,5 +14,5 @@ default = []
 std = []
 
 [dependencies]
-mcu-if = { git = "https://github.com/AnimaGUS-minerva/mcu-if", rev = "da77a48", features=["allocator"] }
+mcu-if = { git = "https://github.com/AnimaGUS-minerva/mcu-if", rev = "645f98d", features=["allocator"] }
 minerva-voucher = { path = ".." }
