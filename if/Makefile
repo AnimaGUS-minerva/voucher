@@ -1,7 +1,7 @@
 test-std:
-	cargo test --features std
+	RUST_TEST_THREADS=1 cargo test --features std
 test-i686:
-	cargo test --target i686-unknown-linux-gnu --no-default-features
+	RUST_TEST_THREADS=1 cargo test --target i686-unknown-linux-gnu --no-default-features
 
 test:
 	make test-std

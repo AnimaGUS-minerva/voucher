@@ -29,11 +29,11 @@ build-i686:
 	cargo build --lib --release --target i686-unknown-linux-gnu --no-default-features
 
 test-nostd:
-	cargo test --no-default-features --features "sign validate"
+	RUST_TEST_THREADS=1 cargo test --no-default-features --features "sign validate"
 test-std:
-	cargo test --no-default-features --features "sign validate std"
+	RUST_TEST_THREADS=1 cargo test --no-default-features --features "sign validate std"
 test-i686:
-	cargo test --target i686-unknown-linux-gnu --no-default-features --features "sign validate"
+	RUST_TEST_THREADS=1 cargo test --target i686-unknown-linux-gnu --no-default-features --features "sign validate"
 test-example-rust-mbedtls:
 	make -C examples/rust-mbedtls test
 test-voucher-if:
